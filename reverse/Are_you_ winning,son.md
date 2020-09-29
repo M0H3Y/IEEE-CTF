@@ -85,6 +85,7 @@ So, We need to look at the stack after this function does all its operations, bu
 
 so we need to bypass all the checks made in TlsCallback_0 , TlsCallback_1, and the checks that are made before calling `sub_401189`.
 
+Note that if you're using software breakpoints and break on TLS callbacks option is enabled in your debugger, the debugger will replace the first byte of TlsCallback_1(0x90) with 0xCC (INT 3) and this value is used in TlsCallback_0 for decryption, so you have to use disable the break on TLS callbacks option, or use H.W breakpoints.
 
 After we manage to get `sub_401189` called , and after all the operations it made, Let's take a look at the stack.
 
