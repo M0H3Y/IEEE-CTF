@@ -85,7 +85,7 @@ So, We need to look at the stack after this function does all its operations, bu
 
 so we need to bypass all the checks made in TlsCallback_0 , TlsCallback_1, and the checks that are made before calling `sub_401189`.
 
-Note that if you're using software breakpoints and break on TLS callbacks option is enabled in your debugger, the debugger will replace the first byte of TlsCallback_1(0x90) with 0xCC (INT 3) and this value is used in TlsCallback_0 for decryption, so you have to use disable the break on TLS callbacks option, or use H.W breakpoints.
+Note that if you're using software breakpoints and break on TLS callbacks option is enabled in your debugger, the debugger will replace the first byte of TlsCallback_1(0x90) with 0xCC (INT 3) and this value is used in TlsCallback_0 for decryption, so you have to disable the break on TLS callbacks option, or use H.W breakpoints.
 
 After we manage to get `sub_401189` called , and after all the operations it made, Let's take a look at the stack.
 
@@ -96,7 +96,7 @@ We finally got the password **egc3rt_mlwr_t3@m** .
 
 After extracting the 7z archive we got another archive `d4d.7z` and another executable. `dad's_secret_mailbox`.
 
-the archive is password-protected and contains a gif. 
+The archive is password-protected and contains a gif. 
 
 So we also need to find out what is the password for that archive.
 
@@ -106,7 +106,7 @@ And when running it, this message is displayed : `What is your approach when sta
 
 Obviously, this executable is dropping some files and deletes them immediately.
 
-let's use procmon too see what files are dropped.
+let's use procmon to see what files are dropped.
 
 ![](images/12.PNG)
 
