@@ -1,7 +1,6 @@
 # Are you winning, son?
 
-This Writeup is for the reverse engineering challenge `Are you winning, son?
-` from IEEE-CTF, hosted by EG-CERT. 
+This Writeup is for the reverse engineering challenge `Are you winning, son?` from IEEE-CTF, hosted by EG-CERT. 
 
 I had a lot of fun solving this challenge, but sadly, I didn't manage to solve this challenge at the competition time.
 
