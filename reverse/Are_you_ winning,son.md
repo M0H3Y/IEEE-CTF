@@ -33,7 +33,7 @@ Let's analyse them one by one.
 
 # TlsCallback_0 
 
-The TlsCallBack_0 first reads the BeingDebugged field from the PEP structure which is at `fs:[30h] ` and the BeingDebugged Field is 2 bytes away from the beginning of the PEP structure to check if the program is being debugged, if it's, it will end without doing any thing.
+The TlsCallBack_0 first reads the BeingDebugged field from the PEB structure which is at `fs:[30h] ` and the BeingDebugged Field is 2 bytes away from the beginning of the PEB structure to check if the program is being debugged, if it's, it will end without doing any thing.
 
 ![](images/3.PNG)
 
@@ -55,7 +55,7 @@ the resulting value of the 2 xor operations will be `5F 5F C4 54 5F E4 35 5F C3 
 
 # TlsCallback_1
 
-it also checks if the program is being debugged by reading the NtGlobalFlag field from the PEP Structure.
+it also checks if the program is being debugged by reading the NtGlobalFlag field from the PEB Structure.
 
 Then it calls `sub_40113B` which also xors the previous value we got which is `5F 5F 69 54 5F E4 35 5F C3 30 74 F2 6D 33 F2 5F` with `AD` but this time the bytes at offsets `2,5,8,11,14` 
 
