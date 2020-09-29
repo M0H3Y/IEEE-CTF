@@ -146,11 +146,14 @@ for num in range(256):
 
 we got the right password `d4d_4lw4ys_3ncrypts_h1s_d4t4!@#$` 
 
-After extracting the archive , we got a gif image, the flag is displayed but at a very high speed. 
+After extracting the archive , we got this gif image 
 
-using this website to slow the gif : [ezgif](https://ezgif.com/speed).
+![](images/dad_always_wins.gif)
+
+The flag is displayed but at a very high speed. 
+
+Using this website to slow the gif : [ezgif](https://ezgif.com/speed).
 
 We finally got the flag : **flag{r3v3rs3_3ng_sk1llz}**
-
 
 
