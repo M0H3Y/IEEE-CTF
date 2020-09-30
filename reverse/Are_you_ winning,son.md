@@ -127,9 +127,9 @@ the only important file i found is infinite_power.py which contains the followin
 
 ```
 
-Whatever the value of the decryption key , it will just take the lower byte of it, because of the anding operatin with 0xFF, so the value `(decryption_key&0xFF)` could only be from 0 to 256 which is 0x00 to 0xFF, and we have a hint that the password starts with `d4d`
+Whatever the value of the decryption key , it will just take the lower byte of it, because of the anding operatin with 0xFF, so the value `(decryption_key&0xFF)` could only be from 0 to 255 which is 0x00 to 0xFF, and we have a hint that the password starts with `d4d`
 
-so we can try all possible values between 0 to 256 until we got the password.
+so we can try all possible values between 0 to 255 until we got the password.
 
 
 ```python
