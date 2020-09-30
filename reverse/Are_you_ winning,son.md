@@ -77,14 +77,14 @@ And yeah, it was used inside a very long function at `sub_401189`.
 This function is doing a lot of operations with values stored on the stack, so maybe it's the function we're looking for :").
 
 
-This function is called without any parameters, but before it's called some checks are made again to see if the program is being debugged.
+This function is called without any parameters, but before it's called, there is again a check if there is any debugger used by checking the 2 bytes `byte_417395` and `byte_417394` that where set in TlsCallback_0 and TlsCallback_1 and contains the BeingDebugged and NtGlobalFlag Values.
 
 ![](images/10.PNG)
 
 
 So, We need to look at the stack after this function does all its operations, but to look at the stack, we need to debug this program, And we first need to bypass the Anti-Debugging techniques used in this executable.
 
-So, We need to bypass all the checks made in TlsCallback_0 , TlsCallback_1, and the checks that are made before calling `sub_401189`.
+So, We need to bypass all the checks made in TlsCallback_0 , TlsCallback_1, and the checks that are made before calling `sub_401189` by simply setting a breakpoint at TlsCallback_0 and TlsCallback_1 before moving the values of the BeingDebugged Field and the NtGlobalFlag Field to the 2 bytes that will be checked later and change them to 0.
 
 Note that if you're using software breakpoints and break on TLS callbacks option is enabled in your debugger, the debugger will replace the first byte of TlsCallback_1(0x90) with 0xCC (INT 3) and this value is used in TlsCallback_0 for decryption, so you have to disable the break on TLS callbacks option, or use H.W breakpoints.
 
